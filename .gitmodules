@@ -1,0 +1,3 @@
+[submodule "ext/google_benchmark_plot"]
+	path = ext/google_benchmark_plot
+	url = https://github.com/lakshayg/google_benchmark_plot
