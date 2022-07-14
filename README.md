@@ -8,8 +8,10 @@ This approach was presented as a lightning talk at C++ On Sea 2022, titled: "C++
 ## Installing dependencies (for ubuntu)
 
 ```bash
-sudo apt install libgtest-dev
-sudo apt install libbenchmark-dev
+# Google test and Google Benchmark
+sudo apt install libgtest-dev libbenchmark-dev
+
+# Google Benchmark plot
 git submodule update --init --recursive 
 ```
 ## Building 
