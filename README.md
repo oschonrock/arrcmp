@@ -33,6 +33,6 @@ For the impatient the results, are included as CSV and png in bench folder and b
 # Sandybridge CPU (SSE2)
 ![image](https://user-images.githubusercontent.com/1681962/180046310-21dd9ec6-e8cb-4a66-bae7-b926470b4f0b.png)
 
-#Skylake CPU (AVX2)
+# Skylake CPU (AVX2)
 ![image](https://user-images.githubusercontent.com/1681962/180046453-17c66e11-1cc6-4c67-993a-6a3510b402a9.png)
 
