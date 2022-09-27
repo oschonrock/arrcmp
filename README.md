@@ -2,8 +2,7 @@
 high performance alternative to glibc's memcmp. Also demonstrating concept of using TMP with intrinsics for optimised assembly code. 
 
 This approach was presented as a lightning talk at C++ On Sea 2022, titled: "C++ your friendly meta assembler - or how to beat memcmp" 
-
-[link to talk on youtube when available]
+https://www.youtube.com/watch?v=v6ENImXcsPE
 
 ## Installing dependencies (for ubuntu)
 
