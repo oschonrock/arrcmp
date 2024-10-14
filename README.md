@@ -11,7 +11,12 @@ https://www.youtube.com/watch?v=v6ENImXcsPE
 sudo apt install libgtest-dev libbenchmark-dev
 
 # Google Benchmark plot
-git submodule update --init --recursive 
+git submodule update --init --recursive
+
+# the benchmark executable links against asmlib for comparison.
+# the object file for the gcc/clang/intel 64-bit ELF version of asmlib in included in /ext
+# and will be automatically linked against. 
+
 ```
 ## Building 
 Best results with clang-14 or newer:
