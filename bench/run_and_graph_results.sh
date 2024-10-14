@@ -23,7 +23,7 @@ csvfile="$base/results/cmp.csv"
 
 if [[ $rerun == 1 ]]
 then
-    "$base/../build/clang/release/bench/arrcmp" --benchmark_format=csv > "$csvfile"
+    "$base/../build/clang/release/bench/bench_arrcmp" --benchmark_format=csv > "$csvfile"
 fi
 
-python "$base/../ext/google_benchmark_plot/plot.py" < "$csvfile" &
+python "$base/../ext/google_benchmark_plot/plot.py" -f "$csvfile"
