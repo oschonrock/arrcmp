@@ -1,6 +1,6 @@
 #include "arrcmp.hpp"
-#include <cstddef>
 #include "gtest/gtest.h"
+#include <cstddef>
 #include <string>
 #include <vector>
 
@@ -12,7 +12,7 @@ int get_sign(int a) { return three_way_cmp(a, 0); }
 
 template <typename... Ts>
 std::array<std::byte, sizeof...(Ts)> make_bytes(Ts&&... args) noexcept {
-  return {std::byte(std::forward<Ts>(args))...};
+  return {static_cast<std::byte>(std::forward<Ts>(args))...};
 }
 
 template <std::size_t N>
