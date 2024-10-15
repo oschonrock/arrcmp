@@ -21,13 +21,13 @@ void arrCmpInt(benchmark::State& state) {
   hash2[idx] = static_cast<std::byte>(0x02);
 
   for (auto _: state) {
-    auto result = arrcmp::array_compare<size>(&hash1[0], &hash2[0], arrcmp::three_way_int{});
+    auto result = arrcmp::array_compare<size>(hash1.data(), hash2.data(), arrcmp::three_way_int{});
     benchmark::DoNotOptimize(result);
     benchmark::DoNotOptimize(hash1);
     benchmark::DoNotOptimize(hash2);
   }
 }
-BENCHMARK(arrCmpInt)->DenseRange(0, size - 1, step);
+BENCHMARK(arrCmpInt)->DenseRange(0, size - 1, step); // NOLINT benchmark
 
 void arrCmpOrdering(benchmark::State& state) {
   auto idx = static_cast<std::size_t>(state.range(0));
@@ -39,13 +39,13 @@ void arrCmpOrdering(benchmark::State& state) {
   hash2[idx] = static_cast<std::byte>(0x02);
 
   for (auto _: state) {
-    auto result = arrcmp::array_compare<size>(&hash1[0], &hash2[0], arrcmp::three_way{});
+    auto result = arrcmp::array_compare<size>(hash1.data(), hash2.data(), arrcmp::three_way{});
     benchmark::DoNotOptimize(result);
     benchmark::DoNotOptimize(hash1);
     benchmark::DoNotOptimize(hash2);
   }
 }
-BENCHMARK(arrCmpOrdering)->DenseRange(0, size - 1, step);
+BENCHMARK(arrCmpOrdering)->DenseRange(0, size - 1, step); // NOLINT benchmark
 
 void asmlib(benchmark::State& state) {
   auto idx = static_cast<std::size_t>(state.range(0));
@@ -57,13 +57,13 @@ void asmlib(benchmark::State& state) {
   hash2[idx] = static_cast<std::byte>(0x02);
 
   for (auto _: state) {
-    auto result = A_memcmp(&hash1[0], &hash2[0], size);
+    auto result = A_memcmp(hash1.data(), hash2.data(), size);
     benchmark::DoNotOptimize(result);
     benchmark::DoNotOptimize(hash1);
     benchmark::DoNotOptimize(hash2);
   }
 }
-BENCHMARK(asmlib)->DenseRange(0, size - 1, step);
+BENCHMARK(asmlib)->DenseRange(0, size - 1, step); // NOLINT benchmark
 
 void glibc(benchmark::State& state) {
   auto idx = static_cast<std::size_t>(state.range(0));
@@ -75,12 +75,12 @@ void glibc(benchmark::State& state) {
   hash2[idx] = static_cast<std::byte>(0x02);
 
   for (auto _: state) {
-    auto result = memcmp(&hash1[0], &hash2[0], size);
+    auto result = memcmp(hash1.data(), hash2.data(), size);
     benchmark::DoNotOptimize(result);
     benchmark::DoNotOptimize(hash1);
     benchmark::DoNotOptimize(hash2);
   }
 }
-BENCHMARK(glibc)->DenseRange(0, size - 1, step);
+BENCHMARK(glibc)->DenseRange(0, size - 1, step); // NOLINT benchmark
 
-BENCHMARK_MAIN();
+BENCHMARK_MAIN(); // NOLINT benchmark
