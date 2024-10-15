@@ -34,9 +34,21 @@ run `bench/run_and_graph_results.sh` to produce CSV results and plot them with `
 
 For the impatient the results, are included as CSV and png in bench folder and below...
 
-# Sandybridge CPU (SSE2)
-![image](https://user-images.githubusercontent.com/1681962/180046310-21dd9ec6-e8cb-4a66-bae7-b926470b4f0b.png)
+# Sandybridge i7 CPU (SSE2) - glibc 2.35
+![image](https://raw.githubusercontent.com/oschonrock/arrcmp/refs/heads/main/bench/results/cmp_sandybridge.png)
 
-# Skylake CPU (AVX2)
-![image](https://user-images.githubusercontent.com/1681962/180046453-17c66e11-1cc6-4c67-993a-6a3510b402a9.png)
+# Skylake i7 CPU (AVX2) - glibc 2.35
+![image](https://raw.githubusercontent.com/oschonrock/arrcmp/refs/heads/main/bench/results/cmp_skylake.png)
+
+## Changes with glibc 2.39
+
+Some improvements were made in glibc, which now means asmlib is not faster anymore, but arrcmp still is:
+
+# Ivy Bridge i5 CPU (SSE2) - glibc 2.39 - clang
+![image](https://raw.githubusercontent.com/oschonrock/arrcmp/refs/heads/main/bench/results/cmp_ivybridge_i5_glibc_2.39_clang.png)
+
+some weird artifacts about 60bytes for gcc
+
+# Ivy Bridge i5 CPU (SSE2) - glibc 2.39 - gcc
+![image](https://raw.githubusercontent.com/oschonrock/arrcmp/refs/heads/main/bench/results/cmp_ivybridge_i5_glibc_2.39_gcc.png)
 
