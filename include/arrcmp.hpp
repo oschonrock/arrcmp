@@ -125,12 +125,7 @@ constexpr std::size_t next_size() noexcept {
 template <typename T>
 requires std::integral<T>
 constexpr std::strong_ordering cmp(T a, T b) noexcept {
-// gcc & MSVC compile a fast `<=>`, but clang is quite slow
-#ifdef __clang__
-  return std::bit_cast<std::strong_ordering>(static_cast<std::int8_t>((a > b) - (a < b)));
-#else
   return a <=> b;
-#endif
 }
 
 constexpr inline std::strong_ordering cmp(std::byte a, std::byte b) noexcept {
